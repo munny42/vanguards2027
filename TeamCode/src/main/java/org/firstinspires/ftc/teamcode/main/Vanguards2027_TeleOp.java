@@ -34,25 +34,25 @@ public class Vanguards2027_TeleOp extends OpMode {
     public void init() {
         drive = new MecanumDrive(hardwareMap, beginPos);
         drive.lazyImu.get().resetYaw();
-        //intake = new Intake(hardwareMap);
     }
 
     public void loop() {
+
+        // ---------------------------------
+        // DRIVE 
+        // ---------------------------------
+
         double forward = -gamepad1.left_stick_y;
         double strafe = gamepad1.left_stick_x;
         double rotate = gamepad1.right_stick_x;
-        drive.driveFieldRelative(forward, strafe, rotate); //field oriented
+        drive.MecanumDrive(forward, strafe, rotate); // regular mecanum
+        // drive.driveFieldRelative(forward, strafe, rotate); //field oriented
 
         // ---------------------------------
         // CONTROLS
         // ---------------------------------
 
-        /*
-        if(gamepad1.a) {
-            intake.intakeIn();
-        } else if(gamepad1.a) {
-            intake.intakeOut();
-        }*/
+        
 
     }
 }
